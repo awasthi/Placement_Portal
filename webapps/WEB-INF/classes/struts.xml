@@ -1,0 +1,115 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="loginvalidate" class="com.gbu.LoginAction">
+            <result name="admin">default_admin.jsp</result>
+            <result name="user">default_user.jsp</result>
+            <result name="recruiter">default_recruiter.jsp</result>
+            <result name="error">index.jsp</result>
+            <result name="input">index.jsp</result>
+        </action>
+        <action name="addDetail" class="com.gbu.addDetail">
+            <result name="success">default_user.jsp</result>
+        </action>
+        
+        <action name="edit" class="com.gbu.editDetail">
+            <result name="success">edit.jsp</result>
+        </action>
+        <action name="editDetail2" class="com.gbu.editDetail2">
+            <result name="success">default_user.jsp</result>
+        </action>
+        <action name="changepassword" class="com.gbu.changePassword" >
+            <result name="admin">default_admin.jsp</result>
+            <result name="user">default_user.jsp</result>
+            <result name="recruiter">default_recruiter.jsp</result>
+            <result name="error">changepassword.jsp</result>
+        </action>
+        <action name="search" class="com.gbu.SearchAction">
+            <result name="success">search.jsp</result>
+        </action>
+        <action name="email" class="com.gbu.sendEmail">
+            <result name="success">default_admin.jsp</result>
+        </action>
+        <action name="generate" class="com.gbu.generateExcel">
+            <result type="stream">
+                <param name="contentType">"application/vnd.ms-excel"</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment; filename="Placement.xls"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="generatedownload" class="com.gbu.GenerateDownload">
+            <result type="stream">
+                <param name="contentType">"application/vnd.ms-excel"</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment; filename="Placement.xls"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="fileup" class="com.gbu.FileUpload">
+            <interceptor-ref name="fileUpload">
+                <param name="maxSize">2097152</param>           
+                <param name="allowedTypes">image/JPG,image/jpg,image/jpeg</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack">
+            </interceptor-ref>
+            <result name="success">default_user.jsp</result>
+            <result name="input">uploadphoto.jsp</result>
+            <result name="error">uploadphoto.jsp</result>
+        </action>
+        <action name="viewimage" class="com.gbu.viewimage">
+        </action>
+        <action name="fileup2" class="com.gbu.FileUpload2">
+            <interceptor-ref name="fileUpload">
+                <param name="maxSize">2097152</param>           
+                <param name="allowedTypes">application/pdf</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack">
+            </interceptor-ref>
+            <result name="success">default_user.jsp</result>
+            <result name="input">uploadresume.jsp</result>
+            <result name="error">uploadresume.jsp</result>
+        </action>  
+        <action name="subID" class="com.gbu.resumeID">
+            <result name="success">viewresume.jsp</result>
+            <result name="error">admin_resume.jsp</result>
+        </action>
+        <action name="resumeAction" class="com.gbu.resumeAction"></action>
+        <action name="subID2" class="com.gbu.resumeID2">
+            <result name="success">viewresume.jsp</result>
+            <result name="error">recruiter_resume.jsp</result>
+        </action>
+        <action name="addjob" class="com.gbu.addJob">
+            <result name="success">default_job.jsp</result>
+        </action>
+        <action name="deletejob" class="com.gbu.deletejob">
+            <result name="success">deletejob.jsp</result>
+        </action>
+        <action name="deletejob2" class="com.gbu.deletejob2">
+            <result name="success" type="chain">deletejob</result>
+        </action>
+        <action name="viewapplicants" class="com.gbu.deletejob">
+            <result name="success">viewapplicants.jsp</result>
+        </action>
+        <action name="viewapplicants2" class="com.gbu.viewapplicants">
+            <result name="success">applicantlist.jsp</result>
+        </action>
+        <action name="viewjob" class="com.gbu.viewjob">
+            <result name="success">joblist.jsp</result>
+        </action>
+        <action name="jobinfo" class="com.gbu.jobinfo">
+            <result name="success">jobinfo.jsp</result>
+        </action>
+        <action name="applyjob" class="com.gbu.applyjob">
+            <result name="success">default_user.jsp</result>
+        </action>
+        <action name="register" class="com.gbu.RegisterAction">
+            <result name="success">register2.jsp</result>
+            <result name="register">register1.jsp</result>
+        </action>
+    </package>
+</struts>

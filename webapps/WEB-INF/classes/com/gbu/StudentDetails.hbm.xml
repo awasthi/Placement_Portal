@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2015 2:38:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.gbu.StudentDetails" table="student_details" catalog="placementcell">
+        <id name="rollnumber" type="string">
+            <column name="rollnumber" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="sname" type="string">
+            <column name="sname" length="45" not-null="true" />
+        </property>
+        <property name="school" type="string">
+            <column name="school" length="45" not-null="true" />
+        </property>
+        <property name="programme" type="string">
+            <column name="programme" length="45" not-null="true" />
+        </property>
+        <property name="batch" type="string">
+            <column name="batch" length="45" not-null="true" />
+        </property>
+        <property name="hometown" type="string">
+            <column name="hometown" length="45" not-null="true" />
+        </property>
+        <property name="dateofbirth" type="string">
+            <column name="dateofbirth" length="45" not-null="true" />
+        </property>
+        <property name="age" type="int">
+            <column name="age" not-null="true" />
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="45" not-null="true" />
+        </property>
+        <property name="specialization" type="string">
+            <column name="specialization" length="45" not-null="true" />
+        </property>
+        <property name="graduationuniversity" type="string">
+            <column name="graduationuniversity" length="45" not-null="true" />
+        </property>
+        <property name="cgpa" type="float">
+            <column name="cgpa" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="board12" type="string">
+            <column name="board12" length="45" not-null="true" />
+        </property>
+        <property name="percentage12" type="float">
+            <column name="percentage12" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="board10" type="string">
+            <column name="board10" length="45" not-null="true" />
+        </property>
+        <property name="percentage10" type="float">
+            <column name="percentage10" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="internship" type="string">
+            <column name="internship" length="45" not-null="true" />
+        </property>
+        <property name="project" type="string">
+            <column name="project" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" length="45" not-null="true" />
+        </property>
+        <property name="degree1" type="string">
+            <column name="degree1" length="45" not-null="true" />
+        </property>
+        <property name="university1" type="string">
+            <column name="university1" length="45" not-null="true" />
+        </property>
+        <property name="cgpa1" type="float">
+            <column name="cgpa1" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="degree2" type="string">
+            <column name="degree2" length="45" not-null="true" />
+        </property>
+        <property name="university2" type="string">
+            <column name="university2" length="45" not-null="true" />
+        </property>
+        <property name="cgpa2" type="float">
+            <column name="cgpa2" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="internship1" type="string">
+            <column name="internship1" length="45" not-null="true" />
+        </property>
+        <property name="project1" type="string">
+            <column name="project1" length="45" not-null="true" />
+        </property>
+        <property name="internship2" type="string">
+            <column name="internship2" length="45" not-null="true" />
+        </property>
+        <property name="project2" type="string">
+            <column name="project2" length="45" not-null="true" />
+        </property>
+        <property name="image" type="binary">
+            <column name="image" />
+        </property>
+        <property name="resume" type="binary">
+            <column name="resume" />
+        </property>
+    </class>
+</hibernate-mapping>
